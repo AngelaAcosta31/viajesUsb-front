@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
 
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'destinos',
     loadChildren: () => import('./destinos/destinos.module').then(m => m.DestinosModule)
+  },
+  {
+    path: 'menuPrincipal',
+    loadChildren: () => import('./pagina-principal/pagina-principal.module').then(m => m.PaginaPrincipalModule)
   },
 
 ];

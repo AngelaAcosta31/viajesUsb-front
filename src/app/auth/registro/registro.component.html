@@ -1,0 +1,44 @@
+<p></p>
+<div>
+    <mat-form-field class="ancho" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="email" >
+        <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+</div>
+<div>
+  <mat-form-field appearance="fill" class="ancho">
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="ancho" appearance="fill">
+        <mat-label>UserName</mat-label>
+        <input type="text" matInput placeholder="username">
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="ancho" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input type="text" matInput placeholder="nombre" >
+        <mat-icon matSuffix>person_outline</mat-icon>
+    </mat-form-field>
+</div>
+
+<div>
+    <mat-form-field class="ancho" appearance="fill">
+        <mat-label>Identificación</mat-label>
+        <input type="text" matInput placeholder="identificacion">
+    </mat-form-field>
+</div>
+<u class="cambiar-contra" >Do you already have an account?</u>
+<p></p>
+<button class="ancho" mat-raised-button color="primary" >Create Account</button>
+

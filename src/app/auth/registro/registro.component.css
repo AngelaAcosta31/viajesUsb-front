@@ -1,0 +1,8 @@
+.ancho{
+  width: 100%;
+}
+.cambiar-contra{
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 15px;
+}
