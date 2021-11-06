@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 
 
@@ -20,11 +21,13 @@ export class ListadoComponent implements OnInit {
   'telefono2', 'correo', 'sexo','fecha_nacimiento', 'fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado','id_tid','acciones'];
   dataSource!: MatTableDataSource<any>;
 
-
+  id: string | null;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private clienteService: ClienteService, private _snackbar: MatSnackBar) { }
+  constructor(private clienteService: ClienteService, private _snackbar: MatSnackBar, private route: ActivatedRoute) {
+    this.id = this.route.snapshot.paramMap.get('id');
+  }
 
   ngOnInit(): void {
     this.cargarCliente();
@@ -56,5 +59,6 @@ export class ListadoComponent implements OnInit {
     })
   }
 
+ 
 
 }

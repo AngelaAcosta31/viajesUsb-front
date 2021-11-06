@@ -1,1 +1,142 @@
-<p>listado de los destinos!</p>
+<div class="container">
+  <mat-toolbar>
+    <span>Destinos</span>
+    <span class="example-spacer"></span>
+    <div>
+      <button mat-raised-button style="background-color: darkgray;" routerLink="/menuPrincipal/crearCliente" >Insertar Destino</button>
+      <button mat-icon-button color="black" routerLink= "/menuPrincipal">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <div *ngIf="listClientes.length > 0">
+    <mat-form-field>
+      <mat-label>Filtro</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- IDENTIFICACION Column -->
+        <ng-container matColumnDef="numero_identificacion">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header> No.Identificación </th>
+          <td mat-cell *matCellDef="let element"> {{element.numero_identificacion}} </td>
+        </ng-container>
+
+        <!-- APELLIDO 1 Column -->
+        <ng-container matColumnDef="primer_apellido">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Apellido1 </th>
+          <td mat-cell *matCellDef="let element"> {{element.primer_apellido}} </td>
+        </ng-container>
+
+        <!-- APELLIDO 2 Column -->
+        <ng-container matColumnDef="segundo_apellido">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Apellido2 </th>
+          <td mat-cell *matCellDef="let element"> {{element.segundo_apellido}} </td>
+        </ng-container>
+
+          <!-- NOMBRE Column -->
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+          </ng-container>
+
+            <!-- TELEFONO1 Column -->
+        <ng-container matColumnDef="telefono1">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Tel.1 </th>
+          <td mat-cell *matCellDef="let element"> {{element.telefono1}} </td>
+        </ng-container>
+
+          <!-- TELEFONO2 Column -->
+          <ng-container matColumnDef="telefono2">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Tel.2 </th>
+            <td mat-cell *matCellDef="let element"> {{element.telefono2}} </td>
+          </ng-container>
+
+            <!-- CORREO Column -->
+        <ng-container matColumnDef="correo">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Correo </th>
+          <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+        </ng-container>
+
+          <!-- SEXO Column -->
+          <ng-container matColumnDef="sexo">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Sexo </th>
+            <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
+          </ng-container>
+
+            <!-- NACIMIENTO Column -->
+        <ng-container matColumnDef="fecha_nacimiento">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Fecha Nacimiento </th>
+          <td mat-cell *matCellDef="let element"> {{element.fecha_nacimiento}} </td>
+        </ng-container>
+
+          <!-- CREACIÓN Column -->
+          <ng-container matColumnDef="fecha_creacion">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Creación </th>
+            <td mat-cell *matCellDef="let element"> {{element.fecha_creacion}} </td>
+          </ng-container>
+
+            <!-- MODIFICACIÓN Column -->
+        <ng-container matColumnDef="fecha_modificacion">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Modificación </th>
+          <td mat-cell *matCellDef="let element"> {{element.fecha_modificacion}} </td>
+        </ng-container>
+          <!-- USU. CREADOR Column -->
+          <ng-container matColumnDef="usu_creador">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Creador </th>
+            <td mat-cell *matCellDef="let element"> {{element.usu_creador}} </td>
+          </ng-container>
+            <!-- USU. MODIFICADOR Column -->
+        <ng-container matColumnDef="usu_modificador">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Modificador </th>
+          <td mat-cell *matCellDef="let element"> {{element.usu_modificador}} </td>
+        </ng-container>
+          <!-- ESTADO Column -->
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+          </ng-container>
+           <!-- ID_TIID Column -->
+           <ng-container matColumnDef="id_tid">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> id_tid </th>
+            <td mat-cell *matCellDef="let element"> {{element.id_tid}} </td>
+          </ng-container>
+
+            <!-- botones Column -->
+            <ng-container matColumnDef="acciones">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element; let i = index"style="text-align:center">
+                <a class="botones" style="color:rgb(34, 114, 128)" matTooltip="ver Cliente">
+                  <mat-icon>search</mat-icon>
+                </a>
+                <a  class="botones" [routerLink]="['/menuPrincipal/editarCliente/',element.numero_identificacion]" style="color:rgb(19, 12, 59)" matTooltip="Editar Cliente">
+                  <mat-icon>edit</mat-icon>
+                </a>
+                <a  class="botones" (click)="eliminarCliente(i)" style="color:rgb(224, 26, 26)" matTooltip="Eliminar Cliente">
+                  <mat-icon>delete</mat-icon>
+                </a>
+              </td>
+            </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+    </div>
+
+  </div>
+
+</div>
+<h2 *ngIf="listClientes.length ==0">
+  No hay Clientes en la tabla
+</h2>

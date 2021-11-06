@@ -14,6 +14,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
+import {MatNativeDateModule} from '@angular/material/core'
 @NgModule({
   declarations: [],
   exports: [
@@ -33,6 +37,11 @@ import {MatSortModule} from '@angular/material/sort';
     MatTooltipModule,
     MatPaginatorModule,
     MatSortModule,
+    MatGridListModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule
+
   ]
 })
 export class MaterialModule { }

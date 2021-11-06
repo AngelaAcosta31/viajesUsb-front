@@ -25,4 +25,5 @@ export class ClienteService {
   eliminarCliente(index: number){
     this.listaClientes.splice(index,1);
   }
+  
 }

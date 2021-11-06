@@ -117,7 +117,7 @@
                 <a class="botones" style="color:rgb(34, 114, 128)" matTooltip="ver Cliente">
                   <mat-icon>search</mat-icon>
                 </a>
-                <a  class="botones" style="color:rgb(19, 12, 59)" matTooltip="Editar Cliente">
+                <a  class="botones" [routerLink]="['/menuPrincipal/editarCliente/',element.numero_identificacion]" style="color:rgb(19, 12, 59)" matTooltip="Editar Cliente">
                   <mat-icon>edit</mat-icon>
                 </a>
                 <a  class="botones" (click)="eliminarCliente(i)" style="color:rgb(224, 26, 26)" matTooltip="Eliminar Cliente">

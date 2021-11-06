@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClientesRoutingModule } from './clientes-routing.module';
@@ -10,7 +10,8 @@ import { CrearClienteComponent } from './crear-cliente/crear-cliente.component';
 @NgModule({
   declarations: [
     ListadoComponent,
-    CrearClienteComponent
+    CrearClienteComponent,
+
   ],
   imports: [
     CommonModule,
@@ -20,6 +21,7 @@ import { CrearClienteComponent } from './crear-cliente/crear-cliente.component';
   exports: [
     ListadoComponent,
     CrearClienteComponent
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class ClientesModule { }

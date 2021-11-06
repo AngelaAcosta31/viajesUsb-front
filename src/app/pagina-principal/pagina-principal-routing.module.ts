@@ -38,6 +38,10 @@ const routes: Routes = [
         component: CrearClienteComponent,
       },
       {
+        path: 'editarCliente/:id',
+        component: CrearClienteComponent,
+      },
+      {
         path: 'detallePlan',
         component: VerDetalleComponent,
       },
