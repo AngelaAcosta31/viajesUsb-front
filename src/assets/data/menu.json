@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "destino",
+    "redirect":"/menuPrincipal/destinos"
+  },
+  {
+    "nombre": "tipoDestino",
+    "redirect":"/menuPrincipal/tipoDestinos"
+  },
+  {
+    "nombre": "plan",
+    "redirect":"/menuPrincipal/plan"
+  },
+  {
+    "nombre": "detalle",
+    "redirect":"/menuPrincipal/detallePlan"
+  },
+  {
+    "nombre": "clientes",
+    "redirect":"/menuPrincipal/clientes"
+  },
+  {
+    "nombre": "usuarios",
+    "redirect":"/menuPrincipal/usuarios"
+  },
+  {
+    "nombre": "tipoId",
+    "redirect":"/menuPrincipal/tipoId"
+  }
+
+]
+

@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PlanesRoutingModule } from './planes-routing.module';
-import { ListadoComponent } from './listado/listado.component';
+import { ListadoPlanComponent } from './listado/listado.component';
 
 
 @NgModule({
   declarations: [
-    ListadoComponent
+    ListadoPlanComponent
   ],
   imports: [
     CommonModule,
     PlanesRoutingModule
   ],
   exports: [
-    ListadoComponent,
+    ListadoPlanComponent,
   ]
 })
 export class PlanesModule { }

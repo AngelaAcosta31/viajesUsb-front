@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Menu } from 'src/app/interfaces/menu';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'app-cards',
@@ -8,23 +10,20 @@ import { Router } from '@angular/router';
 })
 export class CardsComponent implements OnInit {
 
-  @Input() tarjetas:string;
-  titulo: string;
-  imagen: string;
-  texto: string;
-  constructor(private router: Router) {
-    this.tarjetas ="";
-    this.titulo ="";
-    this.imagen ="";
-    this.texto ="";
+  menu: Menu[]=[];
+  constructor(private menuService: MenuService) {
+
   }
 
   ngOnInit(): void {
-  
+    this.cargarMenu();
   }
 
-  textoTarjetas(titulo: string, imagen:string, texto:string){
-
+  cargarMenu(){
+    this.menuService.getMenu().subscribe(data => {
+      this.menu=data
+    });
   }
+
 
 }
