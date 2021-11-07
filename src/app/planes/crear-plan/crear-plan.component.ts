@@ -14,50 +14,27 @@ import { PlanService } from 'src/app/services/plan.service';
 })
 export class CrearPlanComponent implements OnInit {
 
+  estado: any[] = [
+    {value: 'A', viewValue: 'Activo'},
+    {value: 'I', viewValue: 'Inactivo'},
 
-  listPlanes: Planes[]=[];
-  displayedColumns: string[] = ['id','codigo','descripcion_solicitud','nombre','cantidad_personas', 'fecha_solicitud',
-  'fecha_inicio_viaje', 'fecha_fin_viaje', 'valor_total','fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado','id_clie','id_usua'];
-  dataSource!: MatTableDataSource<any>;
+  ];
+  id_cliente: any[] = [
+    {value: '1', viewValue: 'Juan'},
+    {value: '2', viewValue: 'Carolina'},
 
-  id: string | null;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private planService: PlanService, private _snackbar: MatSnackBar, private route: ActivatedRoute) {
-    this.id = this.route.snapshot.paramMap.get('id');
-  }
+  ];
+  id_usuario: any[] = [
+    {value: '1', viewValue: 'CESAR LOPEZ'},
+    {value: '2', viewValue: 'ANGELA ACOSTA'},
+
+
+  ];
+  constructor() { }
 
   ngOnInit(): void {
-    this.cargarPlan();
   }
-
-  cargarPlan(){
-    this.listPlanes = this.planService.getPlan();
-    this.dataSource = new MatTableDataSource(this.listPlanes);
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-  applyFilter(event:Event){
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  eliminarPlan(index:number){
-    this.planService.eliminarPla(index);
-    this.cargarPlan();
-
-    this._snackbar.open('El plan fue eliminado  exitosamente','',{
-      duration:5000,
-      horizontalPosition:'center',
-      verticalPosition: 'top'
-    })
-  }
-
 
 
 }

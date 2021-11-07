@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DetallePlan } from 'src/app/interfaces/detallePlan';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { DetallePlanService } from 'src/app/services/detalle-plan.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { DetallePlanService } from 'src/app/services/detalle-plan.service';
+import { DetallePlan } from 'src/app/interfaces/detallePlan';
 
 @Component({
   selector: 'ver-detalle',

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PlanesRoutingModule } from './planes-routing.module';
 import { ListadoPlanComponent } from './listado/listado.component';
 import { CrearPlanComponent } from './crear-plan/crear-plan.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -13,10 +14,12 @@ import { CrearPlanComponent } from './crear-plan/crear-plan.component';
   ],
   imports: [
     CommonModule,
-    PlanesRoutingModule
+    PlanesRoutingModule,
+    MaterialModule
   ],
   exports: [
     ListadoPlanComponent,
+    CrearPlanComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

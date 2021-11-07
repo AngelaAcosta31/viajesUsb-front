@@ -6,7 +6,6 @@ import { DetallePlan } from '../interfaces/detallePlan';
 })
 export class DetallePlanService {
   listaDetalle: DetallePlan[] = [
-
     {id: '44', alimentacion: 'S', hospedaje: 'S', transporte: 'N', traslados:'N', valor: '300000', cantidad_noches: '2',
     cantidad_dias: '3', fecha_creacion: '2021-06-12', fecha_modificacion: '', usu_creador: 'CLOPEZ', usu_modificador: '',
     estado: 'A',id_plan: '2', id_dest: '3'},

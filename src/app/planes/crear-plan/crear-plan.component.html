@@ -1,1 +1,128 @@
-<p>crear-plan works!</p>
+<div class="container">
+  <mat-toolbar>
+    <span>Registrar Plan</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button routerLink= "/menuPrincipal/plan">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button routerLink= "/menuPrincipal" >
+      <mat-icon>home</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-card style="margin-top:10px;">
+    <form>
+      <mat-grid-list cols="4" rowHeight="80px">
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Codigo</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="6" >
+          <img src="./assets/images/registrarCli.png" width="600" height="500">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Nombre</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-form-field class="ancho" >
+            <mat-label>Descripción Solicitud</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Cantidad Personas</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-form-field class="ancho">
+          <input matInput [matDatepicker]="datepicker1" placeholder="Fecha inicio viaje">
+          <mat-datepicker-toggle matSuffix [for]="datepicker1"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker1></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <mat-form-field class="ancho">
+          <input matInput [matDatepicker]="datepicker2" placeholder="Fecha fin viaje">
+          <mat-datepicker-toggle matSuffix [for]="datepicker2"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker2></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Valor Total</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <input matInput [matDatepicker]="datepicker3" placeholder="Fecha Creación">
+            <mat-datepicker-toggle matSuffix [for]="datepicker3"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker3></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <input matInput [matDatepicker]="datepicker4" placeholder="Fecha Modificación">
+            <mat-datepicker-toggle matSuffix [for]="datepicker4"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker4></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Usuario Creador</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Usuario Modificador</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Estado</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let estados of estado" [value]="estados.value">
+                {{estados.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>ID Cliente</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let ids of id_cliente" [value]="ids.value">
+                {{ids.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>ID Usuario</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let ids of id_usuario" [value]="ids.value">
+                {{ids.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <button mat-raised-button class="anchoBoton">Guardar</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+
+</div>
+

@@ -12,6 +12,7 @@ import { VerTipodestinoComponent } from '../tiposdestinos/ver-tipodestino/ver-ti
 import { VerUsuarioComponent } from '../usuarios/ver-usuario/ver-usuario.component';
 import { CrearDestinoComponent } from '../destinos/crear-destino/crear-destino.component';
 import { CrearDetalleComponent } from '../detalleplan/crear-detalle/crear-detalle.component';
+import { CrearPlanComponent } from '../planes/crear-plan/crear-plan.component';
 
 const routes: Routes = [
   {
@@ -55,16 +56,24 @@ const routes: Routes = [
         component: VerDetalleComponent,
       },
       {
-        path: 'crearDetalle',
+        path: 'crearDetallePlan',
         component: CrearDetalleComponent,
       },
       {
-        path: 'editarDetalle/:id',
+        path: 'editarDetallePlan/:id',
         component: CrearDetalleComponent,
       },
       {
         path: 'plan',
         component: ListadoPlanComponent,
+      },
+      {
+        path: 'crearPlan',
+        component: CrearPlanComponent,
+      },
+      {
+        path: 'editarPlan/:id',
+        component: CrearPlanComponent,
       },
       {
         path: 'tipoId',
