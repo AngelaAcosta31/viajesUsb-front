@@ -8,7 +8,7 @@ import { DetallePlanService } from 'src/app/services/detalle-plan.service';
 import { DetallePlan } from 'src/app/interfaces/detallePlan';
 
 @Component({
-  selector: 'ver-detalle',
+  selector: 'listado-detalle',
   templateUrl: './ver-detalle.component.html',
   styleUrls: ['./ver-detalle.component.css']
 })

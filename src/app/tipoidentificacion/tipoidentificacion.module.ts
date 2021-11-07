@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TipoidentificacionRoutingModule } from './tipoidentificacion-routing.module';
 import { VerTipoidComponent } from './ver-tipoid/ver-tipoid.component';
 import { CrearTipoComponent } from './crear-tipo/crear-tipo.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -13,7 +14,12 @@ import { CrearTipoComponent } from './crear-tipo/crear-tipo.component';
   ],
   imports: [
     CommonModule,
-    TipoidentificacionRoutingModule
+    TipoidentificacionRoutingModule,
+    MaterialModule,
+  ],
+  exports:[
+    VerTipoidComponent,
+    CrearTipoComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

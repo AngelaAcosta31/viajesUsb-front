@@ -8,7 +8,7 @@ import { Usuarios } from 'src/app/interfaces/usuarios';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
-  selector: 'app-ver-usuario',
+  selector: 'listado-usuario',
   templateUrl: './ver-usuario.component.html',
   styleUrls: ['./ver-usuario.component.css']
 })

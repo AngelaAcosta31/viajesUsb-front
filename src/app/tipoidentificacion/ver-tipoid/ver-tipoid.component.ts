@@ -8,7 +8,7 @@ import { TipoIdentificacion } from 'src/app/interfaces/tipoIdentificacion';
 import { TipoIdentificacionService } from '../../services/tipo-identificacion.service';
 
 @Component({
-  selector: 'ver-tipoid',
+  selector: 'listado-tipoid',
   templateUrl: './ver-tipoid.component.html',
   styleUrls: ['./ver-tipoid.component.css']
 })

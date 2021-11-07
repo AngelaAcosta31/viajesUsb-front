@@ -8,7 +8,7 @@ import { TipoDestino } from 'src/app/interfaces/tipoDestino';
 import { TipoDestinoService } from 'src/app/services/tipo-destino.service';
 
 @Component({
-  selector: 'ver-tipodestino',
+  selector: 'listado-tipodestino',
   templateUrl: './ver-tipodestino.component.html',
   styleUrls: ['./ver-tipodestino.component.css']
 })
