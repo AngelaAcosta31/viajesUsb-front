@@ -21,6 +21,31 @@ const routes: Routes = [
     path: 'menuPrincipal',
     loadChildren: () => import('./pagina-principal/pagina-principal.module').then(m => m.PaginaPrincipalModule)
   },
+  {
+    path: 'clientes',
+    loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesModule)
+  },
+  {
+    path: 'detalle',
+    loadChildren: () => import('./detalleplan/detalleplan.module').then(m => m.DetalleplanModule)
+  },
+  {
+    path: 'plan',
+    loadChildren: () => import('./planes/planes.module').then(m => m.PlanesModule)
+  },
+  {
+    path: 'tipoId',
+    loadChildren: () => import('./tipoidentificacion/tipoidentificacion.module').then(m => m.TipoidentificacionModule)
+  },
+  {
+    path: 'tipoDestinos',
+    loadChildren: () => import('./tiposdestinos/tiposdestinos.module').then(m => m.TiposdestinosModule)
+  },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)
+  },
+
 
 ];
 

@@ -28,14 +28,6 @@ const routes: Routes = [
         component: ListadoDestinosComponent,
       },
       {
-        path: 'crearDestino',
-        component: CrearDestinoComponent,
-      },
-      {
-        path: 'editarDestino/:id',
-        component: CrearDestinoComponent,
-      },
-      {
         path: 'tipoDestinos',
         component: VerTipodestinoComponent,
       },
@@ -44,36 +36,12 @@ const routes: Routes = [
         component: ListadoComponent,
       },
       {
-        path: 'crearCliente',
-        component: CrearClienteComponent,
-      },
-      {
-        path: 'editarCliente/:id',
-        component: CrearClienteComponent,
-      },
-      {
         path: 'detallePlan',
         component: VerDetalleComponent,
       },
       {
-        path: 'crearDetallePlan',
-        component: CrearDetalleComponent,
-      },
-      {
-        path: 'editarDetallePlan/:id',
-        component: CrearDetalleComponent,
-      },
-      {
         path: 'plan',
         component: ListadoPlanComponent,
-      },
-      {
-        path: 'crearPlan',
-        component: CrearPlanComponent,
-      },
-      {
-        path: 'editarPlan/:id',
-        component: CrearPlanComponent,
       },
       {
         path: 'tipoId',
