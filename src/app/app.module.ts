@@ -11,11 +11,13 @@ import {MatSliderModule} from '@angular/material/slider';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './pagina-principal/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CrearTipodesComponent } from './tipodestinos/crear-tipodes/crear-tipodes.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CrearTipodesComponent,
 
   ],
   imports: [

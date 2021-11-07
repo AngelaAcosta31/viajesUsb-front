@@ -5,7 +5,12 @@ import { TipoIdentificacion } from '../interfaces/tipoIdentificacion';
   providedIn: 'root'
 })
 export class TipoIdentificacionService {
-  listaTipoIds: TipoIdentificacion[] = [];
+  listaTipoIds: TipoIdentificacion[] = [
+    {id: '1', codigo: 'CC', nombre: 'CEDULA DE CIUDADANIA', fecha_creacion: '2021-02-13', fecha_modificacion: '', usu_creador: 'CLOPEZ',
+     usu_modificador: '', estado: 'A'},
+     {id: '2', codigo: 'TI', nombre: 'TARJETA DE IDENTIDAD', fecha_creacion: '2021-02-13', fecha_modificacion: '', usu_creador: 'CLOPEZ',
+     usu_modificador: '', estado: 'A'},
+  ];
 
   constructor() { }
 
