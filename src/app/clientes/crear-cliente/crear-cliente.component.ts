@@ -9,8 +9,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class CrearClienteComponent implements OnInit {
 
-
-
   genero: any[] = [
     {value: 'F', viewValue: 'Femenino'},
     {value: 'M', viewValue: 'Masculino'},
@@ -23,11 +21,11 @@ export class CrearClienteComponent implements OnInit {
 
   ];
   id_tid: any[] = [
-    {value: 'F', viewValue: 'Playa'},
-    {value: 'M', viewValue: 'Ciudad'},
-    {value: 'M', viewValue: 'Nieve'},
-
+    {value: '1', viewValue: 'Playa'},
+    {value: '2', viewValue: 'Ciudad'},
+    {value: '3', viewValue: 'Nieve'},
   ];
+
   constructor() {
 
    }

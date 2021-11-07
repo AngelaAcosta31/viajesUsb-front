@@ -1,1 +1,124 @@
-<p>crear-detalle works!</p>
+<div class="container">
+  <mat-toolbar>
+    <span>Registrar Detalle Plan</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button routerLink= "/menuPrincipal/detallePlan">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button routerLink= "/menuPrincipal" >
+      <mat-icon>home</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-card style="margin-top:10px;">
+    <form>
+      <mat-grid-list cols="4" rowHeight="80px">
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Alimentación</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="6" >
+          <img src="./assets/images/registrarCli.png" width="600" height="500">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Hospedaje</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-form-field class="ancho" >
+            <mat-label>Transporte</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Traslados</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Valor</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Cantidad Noches</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Cantidad Dias</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <input matInput [matDatepicker]="datepicker1" placeholder="Fecha Creación">
+            <mat-datepicker-toggle matSuffix [for]="datepicker1"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker1></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <input matInput [matDatepicker]="datepicker2" placeholder="Fecha Modificación">
+            <mat-datepicker-toggle matSuffix [for]="datepicker2"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker2></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Usuario Creador</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Usuario Modificador</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>Estado</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let estados of estado" [value]="estados.value">
+                {{estados.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>ID Plan</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let ids of id_planes" [value]="ids.value">
+                {{ids.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <mat-form-field class="ancho">
+            <mat-label>ID Destino</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let ids of id_destinos" [value]="ids.value">
+                {{ids.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1" >
+          <button mat-raised-button class="anchoBoton">Guardar</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+
+</div>
+
