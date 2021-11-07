@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -59,6 +59,6 @@ export class ListadoComponent implements OnInit {
     })
   }
 
- 
+
 
 }

@@ -3,14 +3,14 @@
     <span>Destinos</span>
     <span class="example-spacer"></span>
     <div>
-      <button mat-raised-button style="background-color: darkgray;" routerLink="/menuPrincipal/crearCliente" >Insertar Destino</button>
+      <button mat-raised-button style="background-color: darkgray;" routerLink="/menuPrincipal/crearDestino" >Insertar Destino</button>
       <button mat-icon-button color="black" routerLink= "/menuPrincipal">
         <mat-icon>home</mat-icon>
       </button>
     </div>
   </mat-toolbar>
 
-  <div *ngIf="listClientes.length > 0">
+  <div *ngIf="listDestinos.length > 0">
     <mat-form-field>
       <mat-label>Filtro</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
@@ -24,59 +24,41 @@
           <td mat-cell *matCellDef="let element"> {{element.id}} </td>
         </ng-container>
 
-        <!-- IDENTIFICACION Column -->
-        <ng-container matColumnDef="numero_identificacion">
-          <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header> No.Identificación </th>
-          <td mat-cell *matCellDef="let element"> {{element.numero_identificacion}} </td>
+        <!-- CODIGO Column -->
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header> Codigo</th>
+          <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
         </ng-container>
 
-        <!-- APELLIDO 1 Column -->
-        <ng-container matColumnDef="primer_apellido">
-          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Apellido1 </th>
-          <td mat-cell *matCellDef="let element"> {{element.primer_apellido}} </td>
+        <!-- NOMBRE Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
         </ng-container>
 
-        <!-- APELLIDO 2 Column -->
-        <ng-container matColumnDef="segundo_apellido">
-          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Apellido2 </th>
-          <td mat-cell *matCellDef="let element"> {{element.segundo_apellido}} </td>
+        <!-- DESCRIPCION 2 Column -->
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Descripcion </th>
+          <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
         </ng-container>
 
-          <!-- NOMBRE Column -->
-          <ng-container matColumnDef="nombre">
-            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
-            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+          <!-- TIERRA Column -->
+          <ng-container matColumnDef="tierra">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Tierra </th>
+            <td mat-cell *matCellDef="let element"> {{element.tierra}} </td>
           </ng-container>
 
-            <!-- TELEFONO1 Column -->
-        <ng-container matColumnDef="telefono1">
-          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Tel.1 </th>
-          <td mat-cell *matCellDef="let element"> {{element.telefono1}} </td>
+            <!-- AIRE Column -->
+        <ng-container matColumnDef="aire">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Aire </th>
+          <td mat-cell *matCellDef="let element"> {{element.aire}} </td>
         </ng-container>
 
-          <!-- TELEFONO2 Column -->
+          <!-- MAR Column -->
           <ng-container matColumnDef="telefono2">
-            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Tel.2 </th>
-            <td mat-cell *matCellDef="let element"> {{element.telefono2}} </td>
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Mar</th>
+            <td mat-cell *matCellDef="let element"> {{element.mar}} </td>
           </ng-container>
-
-            <!-- CORREO Column -->
-        <ng-container matColumnDef="correo">
-          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Correo </th>
-          <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
-        </ng-container>
-
-          <!-- SEXO Column -->
-          <ng-container matColumnDef="sexo">
-            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Sexo </th>
-            <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
-          </ng-container>
-
-            <!-- NACIMIENTO Column -->
-        <ng-container matColumnDef="fecha_nacimiento">
-          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Fecha Nacimiento </th>
-          <td mat-cell *matCellDef="let element"> {{element.fecha_nacimiento}} </td>
-        </ng-container>
 
           <!-- CREACIÓN Column -->
           <ng-container matColumnDef="fecha_creacion">
@@ -104,23 +86,23 @@
             <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Estado </th>
             <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
           </ng-container>
-           <!-- ID_TIID Column -->
-           <ng-container matColumnDef="id_tid">
-            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> id_tid </th>
-            <td mat-cell *matCellDef="let element"> {{element.id_tid}} </td>
+           <!-- ID_TIDE Column -->
+           <ng-container matColumnDef="id_tide">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> id_tide </th>
+            <td mat-cell *matCellDef="let element"> {{element.id_tide}} </td>
           </ng-container>
 
             <!-- botones Column -->
             <ng-container matColumnDef="acciones">
               <th mat-header-cell *matHeaderCellDef></th>
               <td mat-cell *matCellDef="let element; let i = index"style="text-align:center">
-                <a class="botones" style="color:rgb(34, 114, 128)" matTooltip="ver Cliente">
+                <a class="botones" style="color:rgb(34, 114, 128)" matTooltip="ver Destino">
                   <mat-icon>search</mat-icon>
                 </a>
-                <a  class="botones" [routerLink]="['/menuPrincipal/editarCliente/',element.numero_identificacion]" style="color:rgb(19, 12, 59)" matTooltip="Editar Cliente">
+                <a  class="botones" [routerLink]="['/menuPrincipal/editarDestino/',element.numero_identificacion]" style="color:rgb(19, 12, 59)" matTooltip="Editar Destino">
                   <mat-icon>edit</mat-icon>
                 </a>
-                <a  class="botones" (click)="eliminarCliente(i)" style="color:rgb(224, 26, 26)" matTooltip="Eliminar Cliente">
+                <a  class="botones" (click)="eliminarDestino(i)" style="color:rgb(224, 26, 26)" matTooltip="Eliminar Destino">
                   <mat-icon>delete</mat-icon>
                 </a>
               </td>
@@ -137,6 +119,6 @@
   </div>
 
 </div>
-<h2 *ngIf="listClientes.length ==0">
-  No hay Clientes en la tabla
+<h2 *ngIf="listDestinos.length ==0">
+  No hay destinos en la tabla
 </h2>
