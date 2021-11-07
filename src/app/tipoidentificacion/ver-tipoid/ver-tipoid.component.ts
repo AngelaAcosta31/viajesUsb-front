@@ -15,7 +15,7 @@ import { TipoIdentificacionService } from '../../services/tipo-identificacion.se
 export class VerTipoidComponent implements OnInit {
 
   listTipoId: TipoIdentificacion[]=[];
-  displayedColumns: string[] = ['id','codigo','nombre', 'fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado'];
+  displayedColumns: string[] = ['id','codigo','nombre', 'fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado','acciones'];
   dataSource!: MatTableDataSource<any>;
 
   id: string | null;

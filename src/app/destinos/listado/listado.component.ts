@@ -3,17 +3,18 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Destinos } from 'src/app/interfaces/destinos';
+import { ActivatedRoute } from '@angular/router';
 import { DestinoService } from '../../services/destino.service';
+import { Destino } from 'src/app/interfaces/destinos';
 @Component({
   selector: 'destinos',
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
 export class ListadoDestinosComponent implements OnInit {
-  listDestinos: Destinos[]=[];
-  displayedColumns: string[] = ['id','codigo','nombre', 'descripcion', 'tierra', 'aire', 'mar', 'fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado','id_tida'];
+  listDestinos: Destino[]=[];
+  displayedColumns: string[] = ['id','codigo','nombre','descripcion','tierra','aire','mar','fecha_creacion','fecha_modificacion',
+    'usu_creador','usu_modificador','estado','id_tide','acciones'];
   dataSource!: MatTableDataSource<any>;
 
   id: string | null;

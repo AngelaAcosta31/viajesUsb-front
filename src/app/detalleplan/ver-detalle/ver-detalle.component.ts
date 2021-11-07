@@ -16,7 +16,7 @@ export class VerDetalleComponent implements OnInit {
 
   listDetalles: DetallePlan[]=[];
   displayedColumns: string[] = ['id','alimentacion','hospedaje','transporte','traslados', 'valor',
-  'cantidad_noches', 'cantidad_dias', 'fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado','id_plan','id_dest'];
+  'cantidad_noches', 'cantidad_dias', 'fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado','id_plan','id_dest','acciones'];
   dataSource!: MatTableDataSource<any>;
 
   id: string | null;

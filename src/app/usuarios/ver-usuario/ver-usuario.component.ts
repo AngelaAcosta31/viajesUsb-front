@@ -16,7 +16,7 @@ export class VerUsuarioComponent implements OnInit {
 
 
   listUsuarios: Usuarios[]=[];
-  displayedColumns: string[] = ['id','login','password','nombre', 'identificacion', 'fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado'];
+  displayedColumns: string[] = ['id','login','password','nombre', 'identificacion', 'fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado','acciones'];
   dataSource!: MatTableDataSource<any>;
 
   id: string | null;

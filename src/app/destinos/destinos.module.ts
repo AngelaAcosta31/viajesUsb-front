@@ -15,10 +15,12 @@ import { CrearDestinoComponent } from './crear-destino/crear-destino.component';
   imports: [
     CommonModule,
     DestinosRoutingModule,
-    MaterialModule,
+    MaterialModule
   ],
   exports: [
     ListadoDestinosComponent,
+    CrearDestinoComponent
+
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

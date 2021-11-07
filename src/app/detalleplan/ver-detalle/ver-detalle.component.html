@@ -17,7 +17,7 @@
     </mat-form-field>
 
     <div class="mat-elevation-z8">
-      <table mat-table [dataSource]="dataSource" matSort></table>
+      <table mat-table [dataSource]="dataSource" matSort>
         <!-- ID Column -->
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef style="text-align: center;"> ID </th>
@@ -30,41 +30,41 @@
           <td mat-cell *matCellDef="let element"> {{element.alimentacion}} </td>
         </ng-container>
 
-        <!-- HOSPEDAJE Column -->
+        <!-- Hospedaje Column -->
         <ng-container matColumnDef="hospedaje">
           <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Hospedaje </th>
           <td mat-cell *matCellDef="let element"> {{element.hospedaje}} </td>
         </ng-container>
 
-        <!-- TRANSPORTE Column -->
+        <!-- Transporte Column -->
         <ng-container matColumnDef="transporte">
           <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Transporte </th>
           <td mat-cell *matCellDef="let element"> {{element.transporte}} </td>
         </ng-container>
 
-          <!-- TRASLADOS Column -->
+          <!-- Traslados Column -->
           <ng-container matColumnDef="traslados">
             <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Traslados </th>
             <td mat-cell *matCellDef="let element"> {{element.traslados}} </td>
           </ng-container>
 
-            <!-- Valor Column -->
+            <!-- VALOR Column -->
         <ng-container matColumnDef="valor">
           <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Valor </th>
           <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
         </ng-container>
 
-          <!-- CANTIDAD_NOCHES Column -->
+          <!-- CANTIDAD NOCHES Column -->
           <ng-container matColumnDef="cantidad_noches">
-            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> No. Noches</th>
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Noches </th>
             <td mat-cell *matCellDef="let element"> {{element.cantidad_noches}} </td>
           </ng-container>
 
-          <!-- CANTIDAD DIAS Column -->
-          <ng-container matColumnDef="cantidad_dias">
-            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> No. Dias </th>
-            <td mat-cell *matCellDef="let element"> {{element.cantidad_dias}} </td>
-          </ng-container>
+            <!-- CANTIDAD DIAS Column -->
+        <ng-container matColumnDef="cantidad_dias">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Dias </th>
+          <td mat-cell *matCellDef="let element"> {{element.cantidad_dias}} </td>
+        </ng-container>
 
           <!-- CREACIÓN Column -->
           <ng-container matColumnDef="fecha_creacion">
@@ -98,11 +98,11 @@
             <td mat-cell *matCellDef="let element"> {{element.id_plan}} </td>
           </ng-container>
 
-           <!-- ID_DEST Column -->
-           <ng-container matColumnDef="id_dest">
-            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> id_dest </th>
-            <td mat-cell *matCellDef="let element"> {{element.id_dest}} </td>
-          </ng-container>
+            <!-- ID_DEST Column -->
+            <ng-container matColumnDef="id_dest">
+              <th mat-header-cell *matHeaderCellDef style="text-align: center;"> id_dest </th>
+              <td mat-cell *matCellDef="let element"> {{element.id_dest}} </td>
+            </ng-container>
 
             <!-- botones Column -->
             <ng-container matColumnDef="acciones">
@@ -111,7 +111,7 @@
                 <a class="botones" style="color:rgb(34, 114, 128)" matTooltip="ver Detalle">
                   <mat-icon>search</mat-icon>
                 </a>
-                <a  class="botones" [routerLink]="['/menuPrincipal/editarDetalle/',element.numero_identificacion]" style="color:rgb(19, 12, 59)" matTooltip="Editar Detalle">
+                <a  class="botones" [routerLink]="['/menuPrincipal/editarDetalle/',element.id]" style="color:rgb(19, 12, 59)" matTooltip="Editar Detalle">
                   <mat-icon>edit</mat-icon>
                 </a>
                 <a  class="botones" (click)="eliminarDetalle(i)" style="color:rgb(224, 26, 26)" matTooltip="Eliminar Detalle">
@@ -124,7 +124,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
       </table>
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 
     </div>
 
@@ -132,6 +132,5 @@
 
 </div>
 <h2 *ngIf="listDetalles.length ==0">
-  No hay destinos en la tabla
+  No hay Detalles en la tabla
 </h2>
-

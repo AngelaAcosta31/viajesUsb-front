@@ -1,4 +1,4 @@
-export interface Destinos{
+export interface Destino{
   id: string;
   codigo: string;
   nombre: string;

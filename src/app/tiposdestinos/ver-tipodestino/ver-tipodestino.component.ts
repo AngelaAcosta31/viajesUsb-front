@@ -16,7 +16,7 @@ export class VerTipodestinoComponent implements OnInit {
 
 
   listTipoDestino: TipoDestino[]=[];
-  displayedColumns: string[] = ['id','codigo','nombre', 'descripcion','fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado'];
+  displayedColumns: string[] = ['id','codigo','nombre', 'descripcion','fecha_creacion','fecha_modificacion','usu_creador','usu_modificador', 'estado','acciones'];
   dataSource!: MatTableDataSource<any>;
 
   id: string | null;

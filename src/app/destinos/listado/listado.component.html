@@ -55,7 +55,7 @@
         </ng-container>
 
           <!-- MAR Column -->
-          <ng-container matColumnDef="telefono2">
+          <ng-container matColumnDef="mar">
             <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Mar</th>
             <td mat-cell *matCellDef="let element"> {{element.mar}} </td>
           </ng-container>
@@ -99,10 +99,10 @@
                 <a class="botones" style="color:rgb(34, 114, 128)" matTooltip="ver Destino">
                   <mat-icon>search</mat-icon>
                 </a>
-                <a  class="botones" [routerLink]="['/menuPrincipal/editarDestino/',element.numero_identificacion]" style="color:rgb(19, 12, 59)" matTooltip="Editar Destino">
+                <a class="botones" [routerLink]="['/menuPrincipal/editarDestino/',element.codigo]" style="color:rgb(19, 12, 59)" matTooltip="Editar Destino">
                   <mat-icon>edit</mat-icon>
                 </a>
-                <a  class="botones" (click)="eliminarDestino(i)" style="color:rgb(224, 26, 26)" matTooltip="Eliminar Destino">
+                <a class="botones" (click)="eliminarDestino(i)" style="color:rgb(224, 26, 26)" matTooltip="Eliminar Destino">
                   <mat-icon>delete</mat-icon>
                 </a>
               </td>
