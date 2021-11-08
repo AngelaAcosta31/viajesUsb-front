@@ -46,7 +46,7 @@ export class VerUsuarioComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  eliminarCliente(index:number){
+  eliminarUsuario(index:number){
     this.usuarioService.eliminarUsuario(index);
     this.cargarUsuario();
 

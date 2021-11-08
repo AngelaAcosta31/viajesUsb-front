@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TiposdestinosRoutingModule } from './tiposdestinos-routing.module';
 import { VerTipodestinoComponent } from './ver-tipodestino/ver-tipodestino.component';
 import { CrearTipodesComponent } from './crear-tipodes/crear-tipodes.component';
-
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,12 @@ import { CrearTipodesComponent } from './crear-tipodes/crear-tipodes.component';
   ],
   imports: [
     CommonModule,
-    TiposdestinosRoutingModule
+    TiposdestinosRoutingModule,
+    MaterialModule
+  ],
+  exports:[
+    VerTipodestinoComponent,
+    CrearTipodesComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { VerUsuarioComponent } from './ver-usuario/ver-usuario.component';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -13,7 +14,12 @@ import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
   ],
   imports: [
     CommonModule,
-    UsuariosRoutingModule
+    UsuariosRoutingModule,
+    MaterialModule
+  ],
+  exports:[
+    VerUsuarioComponent,
+    CrearUsuarioComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

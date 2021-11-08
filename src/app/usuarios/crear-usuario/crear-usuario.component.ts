@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearUsuarioComponent implements OnInit {
 
+
+  estado: any[] = [
+    {value: 'A', viewValue: 'Activo'},
+    {value: 'I', viewValue: 'Inactivo'},
+
+  ];
+
+  hide = true;
+
   constructor() { }
 
   ngOnInit(): void {

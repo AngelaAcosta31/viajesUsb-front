@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearTipoComponent implements OnInit {
 
+  estado: any[] = [
+    {value: 'A', viewValue: 'Activo'},
+    {value: 'I', viewValue: 'Inactivo'},
+
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

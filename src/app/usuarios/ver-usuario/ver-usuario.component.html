@@ -1,1 +1,108 @@
-<p>ver-usuario works!</p>
+<div class="container">
+  <mat-toolbar>
+    <span>Usuarios</span>
+    <span class="example-spacer"></span>
+    <div>
+      <button mat-raised-button style="background-color: darkgray;" routerLink="/usuarios/crearUsuario" >Insertar Usuario</button>
+      <button mat-icon-button color="black" routerLink= "/menuPrincipal">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <div *ngIf="listUsuarios.length > 0">
+    <mat-form-field>
+      <mat-label>Filtro</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- LOGINColumn -->
+        <ng-container matColumnDef="login">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;" mat-sort-header> Login </th>
+          <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+        </ng-container>
+
+        <!-- PASSWORD Column -->
+        <ng-container matColumnDef="password">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Password </th>
+          <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+        </ng-container>
+
+          <!-- NOMBRE Column -->
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+          </ng-container>
+
+            <!-- TIDENTIFICACIÓN Column -->
+        <ng-container matColumnDef="identificacion">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Identificación </th>
+          <td mat-cell *matCellDef="let element"> {{element.identificacion}} </td>
+        </ng-container>
+
+          <!-- CREACIÓN Column -->
+          <ng-container matColumnDef="fecha_creacion">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Creación </th>
+            <td mat-cell *matCellDef="let element"> {{element.fecha_creacion}} </td>
+          </ng-container>
+
+            <!-- MODIFICACIÓN Column -->
+        <ng-container matColumnDef="fecha_modificacion">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Modificación </th>
+          <td mat-cell *matCellDef="let element"> {{element.fecha_modificacion}} </td>
+        </ng-container>
+          <!-- USU. CREADOR Column -->
+          <ng-container matColumnDef="usu_creador">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Creador </th>
+            <td mat-cell *matCellDef="let element"> {{element.usu_creador}} </td>
+          </ng-container>
+            <!-- USU. MODIFICADOR Column -->
+        <ng-container matColumnDef="usu_modificador">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Modificador </th>
+          <td mat-cell *matCellDef="let element"> {{element.usu_modificador}} </td>
+        </ng-container>
+          <!-- ESTADO Column -->
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+          </ng-container>
+
+            <!-- botones Column -->
+            <ng-container matColumnDef="acciones">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element; let i = index"style="text-align:center">
+                <a class="botones" style="color:rgb(34, 114, 128)" matTooltip="ver Usuario">
+                  <mat-icon>search</mat-icon>
+                </a>
+                <a  class="botones" [routerLink]="['/usuarios/editarUsuario/',element.id]" style="color:rgb(19, 12, 59)" matTooltip="Editar Usuario">
+                  <mat-icon>edit</mat-icon>
+                </a>
+                <a  class="botones" (click)="eliminarUsuario(i)" style="color:rgb(224, 26, 26)" matTooltip="Eliminar Usuario">
+                  <mat-icon>delete</mat-icon>
+                </a>
+              </td>
+            </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
+    </div>
+
+  </div>
+
+</div>
+<h2 *ngIf="listUsuarios.length ==0">
+  No hay Usuarios en la tabla
+</h2>
+

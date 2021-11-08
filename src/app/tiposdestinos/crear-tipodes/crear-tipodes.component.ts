@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crear-tipodes.component.css']
 })
 export class CrearTipodesComponent implements OnInit {
+  estado: any[] = [
+    {value: 'A', viewValue: 'Activo'},
+    {value: 'I', viewValue: 'Inactivo'},
+
+  ];
 
   constructor() { }
 
