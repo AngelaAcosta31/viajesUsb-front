@@ -9,6 +9,8 @@ import { PlanesModule } from './planes/planes.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './pagina-principal/navbar/navbar.component';
+import { PaginaPrincipalModule } from './pagina-principal/pagina-principal.module';
 
 
 
@@ -22,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    PaginaPrincipalModule,
+
 
   ],
   providers: [],

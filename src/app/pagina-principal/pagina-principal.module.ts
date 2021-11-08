@@ -22,6 +22,9 @@ import { CardsComponent } from './cards/cards.component';
     PaginaPrincipalRoutingModule,
     MaterialModule
   ],
+  exports: [
+    NavbarComponent,
+  ]
 
 
 })
